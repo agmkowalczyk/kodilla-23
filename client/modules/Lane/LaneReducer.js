@@ -40,7 +40,7 @@ export default function lanes (state = initialState, action) {
       // ?????
       // const lane = { ...state[action.id], editing: true };
       // return { ...state, [action.id]: lane };
-      return state.map(lane => lane.id === action.laneId ? {...lane, "editing": true} : lane); 
+      return state.map(lane => lane.id === action.laneId ? { ...lane, editing: true } : lane); 
 
     default:
       return state;

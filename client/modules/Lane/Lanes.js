@@ -6,8 +6,8 @@ import styles from './Lane.css';
 const Lanes = ({ lanes }) => {
 console.log("***Lanes.js: " + JSON.stringify(lanes));
   return (
-    <div className="lanes">{lanes.map(lane =>
-      <Lane className="lane" key={lane.id} lane={lane} />
+    <div className={styles.Lanes}>{lanes.map(lane =>
+      <Lane key={lane.id} lane={lane} />
     )}</div>
   );
 };

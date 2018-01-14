@@ -10,21 +10,6 @@ import styles from './Note.css';
 const Note = (props) =>
   <li className={styles.Note} {...props}>{props.children}</li>;
 
-// class Note extends Component {
-//   render() {
-//     return (
-//     );
-//   }
-// }
-
-// const mapStateToProps = (state) => {
-//   return {};
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {};
-// };
-
 Note.propTypes = {
   children: PropTypes.any,
 };
