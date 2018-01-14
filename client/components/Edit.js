@@ -12,9 +12,8 @@ export default class Edit extends Component {
   finishEdit = (e) => {
     const value = e.target.value;
 
-    if(this.props.onUpdate) {console.log('test');
-      this.props.onUpdate(value.toUpperCase());console.log(value.toUpperCase());
-      console.log(this.props);
+    if(this.props.onUpdate) {
+      this.props.onUpdate(value.trim());
     }
   };
 
