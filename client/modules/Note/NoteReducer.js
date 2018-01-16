@@ -11,13 +11,13 @@ export default function notes(state = initialState, action) {
 
     case UPDATE_NOTE:
       return state.map((note) => {
-        return note.id === action.id ? { ...note, ...action.note } : note;
+        return note.id === action.note.id ? { ...note, ...action.note } : note;
       });
 
     case DELETE_NOTE:
-      return state.filter((note) => note.id !== action.noteId);
+      return state.filter(note => note.id !== action.noteId);
 
-    case EDIT_NOTE:
+    case EDIT_NOTE:    
       return state.map(note => note.id === action.noteId ? { ...note, editing: true } : note); 
 
     default:
