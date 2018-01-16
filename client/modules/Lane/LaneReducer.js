@@ -13,7 +13,7 @@ export default function lanes (state = initialState, action) {
       
     case UPDATE_LANE:
       return state.map(lane => {
-        return lane.id === action.laneIid ? { ...lane, ...action.lane } : lane;
+        return lane.id === action.lane.id ? { ...lane, ...action.lane } : lane;
       });
     
     case DELETE_LANE:
