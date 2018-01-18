@@ -25,13 +25,16 @@ export default function lanes (state = initialState, action) {
           const notes = [...lane.notes, action.note.id];
           return { ...lane, notes };
         }
-      return lane;
+        return lane;
       });
 
     case DELETE_NOTE:
       return state.map(lane => {
         if (lane.id === action.laneId) {
-          return state.filter((note) => note.id !== action.noteId);
+          // return state.filter((note) => note.id !== action.noteId);
+
+          const notes = lanes.notes ? lane.notes.filter(note => note.id !== action.noteId) : [];
+          return { ...lane, notes };
         }
       return lane;  
       });
