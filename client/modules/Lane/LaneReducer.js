@@ -31,7 +31,7 @@ export default function lanes (state = initialState, action) {
     case DELETE_NOTE:
       return state.map(lane => {
         if (lane.id === action.laneId) {
-          const notes = lanes.notes ? lane.notes.filter(note => note.id !== action.noteId) : [];
+          const notes = lane.notes.length ? lane.notes.filter(note => note !== action.noteId) : [];
           
           return { ...lane, notes };
         }
